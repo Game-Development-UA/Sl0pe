@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1371539423713984}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 88.7092, y: 32.886017, z: -9.636108}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -51,7 +51,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c99a9c3bdb81ed4394dc907173192c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSize: 20
-  ySize: 20
   cellPrefab: {fileID: 114750476443257760, guid: c581c24e6c0692645bf0b455d39ef823,
+    type: 2}
+  size:
+    x: 20
+    z: 20
+  passagePrefab: {fileID: 114953779318669084, guid: 63d9486fe85330c4089a2b492c24a49f,
+    type: 2}
+  wallPrefab: {fileID: 114707218902948758, guid: d139a7ccbcce8e74cb0038fbf4689bcf,
     type: 2}
