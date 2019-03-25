@@ -36,7 +36,12 @@ public class Maze : MonoBehaviour {
     {
         int currentIndex = activeCells.Count - 1;
         Cell currentCell = activeCells[currentIndex];
-        Direction direction = Directions.RandomValue;
+        if(currentCell.IsFullyInitialized)
+        {
+            activeCells.RemoveAt(currentIndex);
+            return;
+        }
+        Direction direction = currentCell.RandomUninitializedDirection;
         IntVector2 coordinates = currentCell.coordinates + direction.ToIntVector2();
         if (ContainsCoordinates(coordinates))
         {
@@ -50,13 +55,11 @@ public class Maze : MonoBehaviour {
             else
             {
                 CreateWall(currentCell, neighbor, direction);
-                activeCells.RemoveAt(currentIndex);
             }
         }
         else
         {
             CreateWall(currentCell, null, direction);
-            activeCells.RemoveAt(currentIndex);
         }
     }
 
