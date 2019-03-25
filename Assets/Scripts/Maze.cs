@@ -4,40 +4,102 @@ using UnityEngine;
 
 public class Maze : MonoBehaviour {
 
-    public int xSize;
-    public int ySize;
     public Cell cellPrefab;
+    public IntVector2 size;
+    public Passage passagePrefab;
+    public Wall wallPrefab;
 
     private Cell[,] cells;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public Cell GetCell(IntVector2 coordinates)
+    {
+        return cells[coordinates.x, coordinates.z];
+    }
 
     public void Create()
     {
-        cells = new Cell[xSize, ySize];
-        for (int x = 0; x < xSize; ++x)
+        cells = new Cell[size.x, size.z];
+        List<Cell> activeCells = new List<Cell>();
+        DoFirstGenerationStep(activeCells);
+        while(activeCells.Count > 0)
         {
-            for (int y = 0; y < ySize; ++y)
-            {
-                CreateCell(x, y);
-            }
+            DoNextGenerationStep(activeCells);
         }
     }
 
-    private void CreateCell(int x, int y)
+    private void DoFirstGenerationStep(List<Cell> activeCells)
+    {
+        activeCells.Add(CreateCell(RandomCoordinates));
+    }
+
+    private void DoNextGenerationStep(List<Cell> activeCells)
+    {
+        int currentIndex = activeCells.Count - 1;
+        Cell currentCell = activeCells[currentIndex];
+        Direction direction = Directions.RandomValue;
+        IntVector2 coordinates = currentCell.coordinates + direction.ToIntVector2();
+        if (ContainsCoordinates(coordinates))
+        {
+            Cell neighbor = GetCell(coordinates);
+            if (neighbor == null)
+            {
+                neighbor = CreateCell(coordinates);
+                CreatePassage(currentCell, neighbor, direction);
+                activeCells.Add(neighbor);
+            }
+            else
+            {
+                CreateWall(currentCell, neighbor, direction);
+                activeCells.RemoveAt(currentIndex);
+            }
+        }
+        else
+        {
+            CreateWall(currentCell, null, direction);
+            activeCells.RemoveAt(currentIndex);
+        }
+    }
+
+    private void CreatePassage(Cell cell, Cell otherCell, Direction direction)
+    {
+        Passage passage = Instantiate(passagePrefab) as Passage;
+        passage.Initialize(cell, otherCell, direction);
+        passage = Instantiate(passagePrefab) as Passage;
+        passage.Initialize(otherCell, cell, direction.GetOpposite());
+    }
+
+    private void CreateWall(Cell cell, Cell otherCell, Direction direction)
+    {
+        Wall wall = Instantiate(wallPrefab) as Wall;
+        wall.Initialize(cell, otherCell, direction);
+        if(otherCell != null)
+        {
+            wall = Instantiate(wallPrefab) as Wall;
+            wall.Initialize(otherCell, cell, direction.GetOpposite());
+        }
+    }
+
+    private Cell CreateCell(IntVector2 coordinates)
     {
         Cell newCell = Instantiate(cellPrefab) as Cell;
-        cells[x, y] = newCell;
-        newCell.name = "Cell " + x + ", " + y;
+        cells[coordinates.x, coordinates.z] = newCell;
+        newCell.coordinates = coordinates;
+        newCell.name = "Cell " + coordinates.x + ", " + coordinates.z;
         newCell.transform.parent = transform;
-        newCell.transform.localPosition = new Vector3(x - xSize * 0.5f + 0.5f, 0.0f, y - ySize * 0.5f + 0.5f);
+        newCell.transform.localPosition = new Vector3(coordinates.x - size.x * 0.5f + 0.5f, 0.0f, coordinates.z - size.z * 0.5f + 0.5f);
+        return newCell;
+    }
+
+    public IntVector2 RandomCoordinates
+    {
+        get
+        {
+            return new IntVector2(Random.Range(0, size.x), Random.Range(0, size.z));
+        }
+    }
+
+    public bool ContainsCoordinates(IntVector2 coordinate)
+    {
+        return coordinate.x >= 0 && coordinate.x < size.x && coordinate.z >= 0 && coordinate.z < size.z;
     }
 }

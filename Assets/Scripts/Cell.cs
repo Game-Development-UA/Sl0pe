@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Cell : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public IntVector2 coordinates;
+    private CellEdge[] edges = new CellEdge[Directions.Count];
+
+	public CellEdge GetEdge(Direction direction)
+    {
+        return edges[(int)direction];
+    }
+
+    public void SetEdge(Direction direction, CellEdge edge)
+    {
+        edges[(int)direction] = edge;
+    }
 }
