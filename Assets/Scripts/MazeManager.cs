@@ -5,6 +5,7 @@ using UnityEngine;
 public class MazeManager : MonoBehaviour {
 
     public Maze mazePrefab;
+    public Endpoint endpointPrefab;
 
     private Maze currentMaze;
 
@@ -26,12 +27,13 @@ public class MazeManager : MonoBehaviour {
     private void StartGame()
     {
         currentMaze = Instantiate(mazePrefab) as Maze;
-        currentMaze.Create();
+        currentMaze.Create(endpointPrefab);
     }
 
     private void Restart()
     {
         Destroy(currentMaze.gameObject);
+        currentMaze.Destroy();
         StartGame();
     }
 }

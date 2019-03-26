@@ -8,16 +8,16 @@ public class Maze : MonoBehaviour {
     public IntVector2 size;
     public Passage passagePrefab;
     public Wall wallPrefab;
-    public Endpoint endpointPrefab;
 
     private Cell[,] cells;
+    private Endpoint endpoint;
 
     public Cell GetCell(IntVector2 coordinates)
     {
         return cells[coordinates.x, coordinates.z];
     }
 
-    public void Create()
+    public void Create(Endpoint endpointPrefab)
     {
         cells = new Cell[size.x, size.z];
         List<Cell> activeCells = new List<Cell>();
@@ -26,7 +26,7 @@ public class Maze : MonoBehaviour {
         {
             DoNextGenerationStep(activeCells);
         }
-        Instantiate(endpointPrefab, new Vector3(size.x / 2 - 0.5f, 3f, size.z / 2 - 0.5f), Quaternion.identity);
+        endpoint = Instantiate(endpointPrefab, new Vector3(size.x / 2 - 0.25f, 3f, size.z / 2 - 0.25f), Quaternion.identity);
     }
 
     private void DoFirstGenerationStep(List<Cell> activeCells)
@@ -106,5 +106,10 @@ public class Maze : MonoBehaviour {
     public bool ContainsCoordinates(IntVector2 coordinate)
     {
         return coordinate.x >= 0 && coordinate.x < size.x && coordinate.z >= 0 && coordinate.z < size.z;
+    }
+
+    public void Destroy()
+    {
+        Destroy(endpoint.gameObject);
     }
 }
