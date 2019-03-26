@@ -60,3 +60,5 @@ MonoBehaviour:
     type: 2}
   wallPrefab: {fileID: 114707218902948758, guid: d139a7ccbcce8e74cb0038fbf4689bcf,
     type: 2}
+  endpointPrefab: {fileID: 114924616711613490, guid: 7a30383f840ddc143bc4baa6a3f37646,
+    type: 2}

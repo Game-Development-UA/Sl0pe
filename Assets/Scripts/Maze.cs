@@ -8,6 +8,7 @@ public class Maze : MonoBehaviour {
     public IntVector2 size;
     public Passage passagePrefab;
     public Wall wallPrefab;
+    public Endpoint endpointPrefab;
 
     private Cell[,] cells;
 
@@ -25,6 +26,7 @@ public class Maze : MonoBehaviour {
         {
             DoNextGenerationStep(activeCells);
         }
+        Instantiate(endpointPrefab, new Vector3(size.x / 2 - 0.5f, 3f, size.z / 2 - 0.5f), Quaternion.identity);
     }
 
     private void DoFirstGenerationStep(List<Cell> activeCells)
