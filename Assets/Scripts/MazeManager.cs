@@ -5,16 +5,16 @@ using UnityEngine;
 public class MazeManager : MonoBehaviour {
 
     public Maze mazePrefab;
+
+    // Custom Prefab
     public Endpoint endpointPrefab;
 
     private Maze currentMaze;
 
-	// Use this for initialization
 	void Start () {
         StartGame();
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
         
         // Allow user to restart game by pressing ESC

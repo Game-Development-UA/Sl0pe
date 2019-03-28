@@ -108,6 +108,7 @@ public class Maze : MonoBehaviour {
         return coordinate.x >= 0 && coordinate.x < size.x && coordinate.z >= 0 && coordinate.z < size.z;
     }
 
+    // Custom Method
     public void Destroy()
     {
         Destroy(endpoint.gameObject);
