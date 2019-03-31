@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MazeManager : MonoBehaviour {
 
@@ -26,6 +27,12 @@ public class MazeManager : MonoBehaviour {
 
     private void StartGame()
     {
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+
+        // Increase size of maze with level progression
+        mazePrefab.size.x = 5 + currentLevel * 5;
+        mazePrefab.size.z = 5 + currentLevel * 5;
+
         currentMaze = Instantiate(mazePrefab) as Maze;
         currentMaze.Create(endpointPrefab);
     }
