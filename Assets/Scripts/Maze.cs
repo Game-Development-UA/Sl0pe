@@ -26,7 +26,11 @@ public class Maze : MonoBehaviour {
         {
             DoNextGenerationStep(activeCells);
         }
-        endpoint = Instantiate(endpointPrefab, new Vector3(size.x / 2 - 0.25f, 3f, size.z / 2 - 0.25f), Quaternion.identity);
+
+        int endpointX = Random.Range(-1 * size.x / 2, 1 * size.x / 2);
+        int endpointZ = Random.Range(-1 * size.z / 2, 1 * size.z / 2);
+
+        endpoint = Instantiate(endpointPrefab, new Vector3(endpointX + 0.5f, 3f, endpointZ + 0.5f), Quaternion.identity);
     }
 
     private void DoFirstGenerationStep(List<Cell> activeCells)

@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4968089092057890}
-  - component: {fileID: 114476917039244784}
+  - component: {fileID: 114400798505431056}
   m_Layer: 0
   m_Name: Maze
   m_TagString: Untagged
@@ -40,7 +40,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114476917039244784
+--- !u!114 &114400798505431056
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -54,8 +54,8 @@ MonoBehaviour:
   cellPrefab: {fileID: 114772478004062300, guid: c581c24e6c0692645bf0b455d39ef823,
     type: 2}
   size:
-    x: 21
-    z: 21
+    x: 10
+    z: 10
   passagePrefab: {fileID: 114953779318669084, guid: 63d9486fe85330c4089a2b492c24a49f,
     type: 2}
   wallPrefab: {fileID: 114707218902948758, guid: d139a7ccbcce8e74cb0038fbf4689bcf,
