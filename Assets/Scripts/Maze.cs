@@ -11,6 +11,7 @@ public class Maze : MonoBehaviour {
 
     private Cell[,] cells;
     private Endpoint endpoint;
+    private Vector2[] corners = new Vector2[4];
 
     public Cell GetCell(IntVector2 coordinates)
     {
@@ -27,10 +28,14 @@ public class Maze : MonoBehaviour {
             DoNextGenerationStep(activeCells);
         }
 
-        int endpointX = Random.Range(-1 * size.x / 2, 1 * size.x / 2);
-        int endpointZ = Random.Range(-1 * size.z / 2, 1 * size.z / 2);
+        corners[0] = new Vector2(size.x / 2 - 0.5f, size.z / 2 - 0.5f);
+        corners[1] = new Vector2(-1 * size.x / 2 + 0.5f, size.z / 2 - 0.5f);
+        corners[2] = new Vector2(-1 * size.x / 2 + 0.5f, -1 * size.z / 2 + 0.5f);
+        corners[3] = new Vector2(size.x / 2 - 0.5f, -1 * size.z / 2 + 0.5f);
 
-        endpoint = Instantiate(endpointPrefab, new Vector3(endpointX + 0.5f, 3f, endpointZ + 0.5f), Quaternion.identity);
+        int randomCorner = Random.Range(0, 4);
+
+        endpoint = Instantiate(endpointPrefab, new Vector3(corners[randomCorner].x, 3f, corners[randomCorner].y), Quaternion.identity);
     }
 
     private void DoFirstGenerationStep(List<Cell> activeCells)
