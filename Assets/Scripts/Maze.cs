@@ -12,6 +12,7 @@ public class Maze : MonoBehaviour {
     private Cell[,] cells;
     private Endpoint endpoint;
     private Vector2[] corners = new Vector2[4];
+    private int endpointCorner; 
 
     public Cell GetCell(IntVector2 coordinates)
     {
@@ -33,9 +34,9 @@ public class Maze : MonoBehaviour {
         corners[2] = new Vector2(-1 * size.x / 2 + 0.5f, -1 * size.z / 2 + 0.5f);
         corners[3] = new Vector2(size.x / 2 - 0.5f, -1 * size.z / 2 + 0.5f);
 
-        int randomCorner = Random.Range(0, 4);
+        endpointCorner = Random.Range(0, 4);
 
-        endpoint = Instantiate(endpointPrefab, new Vector3(corners[randomCorner].x, 3f, corners[randomCorner].y), Quaternion.identity);
+        endpoint = Instantiate(endpointPrefab, new Vector3(corners[endpointCorner].x, 3f, corners[endpointCorner].y), Quaternion.identity);
     }
 
     private void DoFirstGenerationStep(List<Cell> activeCells)
@@ -121,5 +122,11 @@ public class Maze : MonoBehaviour {
     public void Destroy()
     {
         Destroy(endpoint.gameObject);
+    }
+
+    // Custom Method
+    public int GetEndpointCorner()
+    {
+        return endpointCorner;
     }
 }
