@@ -8,16 +8,18 @@ public class Maze : MonoBehaviour {
     public IntVector2 size;
     public Passage passagePrefab;
     public Wall wallPrefab;
-    public Endpoint endpointPrefab;
 
     private Cell[,] cells;
+    private Endpoint endpoint;
+    private Vector2[] corners = new Vector2[4];
+    private int endpointCorner; 
 
     public Cell GetCell(IntVector2 coordinates)
     {
         return cells[coordinates.x, coordinates.z];
     }
 
-    public void Create()
+    public void Create(Endpoint endpointPrefab)
     {
         cells = new Cell[size.x, size.z];
         List<Cell> activeCells = new List<Cell>();
@@ -26,7 +28,15 @@ public class Maze : MonoBehaviour {
         {
             DoNextGenerationStep(activeCells);
         }
-        Instantiate(endpointPrefab, new Vector3(size.x / 2 - 0.5f, 3f, size.z / 2 - 0.5f), Quaternion.identity);
+
+        corners[0] = new Vector2(size.x / 2 - 0.5f, size.z / 2 - 0.5f);
+        corners[1] = new Vector2(-1 * size.x / 2 + 0.5f, size.z / 2 - 0.5f);
+        corners[2] = new Vector2(-1 * size.x / 2 + 0.5f, -1 * size.z / 2 + 0.5f);
+        corners[3] = new Vector2(size.x / 2 - 0.5f, -1 * size.z / 2 + 0.5f);
+
+        endpointCorner = Random.Range(0, 4);
+
+        endpoint = Instantiate(endpointPrefab, new Vector3(corners[endpointCorner].x, 3f, corners[endpointCorner].y), Quaternion.identity);
     }
 
     private void DoFirstGenerationStep(List<Cell> activeCells)
@@ -106,5 +116,23 @@ public class Maze : MonoBehaviour {
     public bool ContainsCoordinates(IntVector2 coordinate)
     {
         return coordinate.x >= 0 && coordinate.x < size.x && coordinate.z >= 0 && coordinate.z < size.z;
+    }
+
+    // Custom Method
+    public void Destroy()
+    {
+        Destroy(endpoint.gameObject);
+    }
+
+    // Custom Method
+    public int GetEndpointCorner()
+    {
+        return endpointCorner;
+    }
+
+    // Custom Method
+    public Endpoint GetEndpoint()
+    {
+        return endpoint;
     }
 }
