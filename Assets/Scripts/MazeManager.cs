@@ -25,7 +25,13 @@ public class MazeManager : MonoBehaviour {
         {
             Restart();
         }
-	}
+
+        // Go to next level if user completes current level
+        if (currentMaze.GetEndpoint().GetComplete())
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    }
 
     private void StartGame()
     {

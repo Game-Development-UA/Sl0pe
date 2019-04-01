@@ -129,4 +129,10 @@ public class Maze : MonoBehaviour {
     {
         return endpointCorner;
     }
+
+    // Custom Method
+    public Endpoint GetEndpoint()
+    {
+        return endpoint;
+    }
 }
