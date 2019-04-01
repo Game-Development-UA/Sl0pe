@@ -113,15 +113,15 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &355143483
+--- !u!1 &1481630266
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 355143485}
-  - component: {fileID: 355143484}
+  - component: {fileID: 1481630268}
+  - component: {fileID: 1481630267}
   m_Layer: 0
   m_Name: MazeManager
   m_TagString: Untagged
@@ -129,12 +129,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &355143484
+--- !u!114 &1481630267
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 355143483}
+  m_GameObject: {fileID: 1481630266}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 018d9a9d4760d0248bbbdff718ab19da, type: 3}
@@ -145,28 +145,28 @@ MonoBehaviour:
   player: {fileID: 114156558178234392, guid: 93c9806a7f5afeb45aaded024d2d88d8, type: 2}
   endpointPrefab: {fileID: 114924616711613490, guid: 7a30383f840ddc143bc4baa6a3f37646,
     type: 2}
---- !u!4 &355143485
+--- !u!4 &1481630268
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 355143483}
+  m_GameObject: {fileID: 1481630266}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3.1523092, y: -12.584923, z: 3.188242}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &949197200
+--- !u!1 &1756787295
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 949197202}
-  - component: {fileID: 949197201}
+  - component: {fileID: 1756787297}
+  - component: {fileID: 1756787296}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -174,12 +174,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!108 &949197201
+--- !u!108 &1756787296
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 949197200}
+  m_GameObject: {fileID: 1756787295}
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
@@ -211,12 +211,12 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!4 &949197202
+--- !u!4 &1756787297
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 949197200}
+  m_GameObject: {fileID: 1756787295}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
