@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour {
             {
                 if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit))
                 {
-                    if ((hit.collider.tag == "Wall") && (hit.distance < 1f))
+                    if ((hit.collider.gameObject.tag == "Wall") && (hit.distance < 1f))
                     {
                         transform.Rotate(0f, 90f, 0f);
                     }
@@ -55,6 +55,18 @@ public class PlayerController : MonoBehaviour {
         else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
             transform.Rotate(0f, -90f, 0f);
+        }
+        else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+        {
+            RaycastHit hit;
+
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit))
+            {
+                if ((hit.distance > 1f) || ((hit.distance < 1f) && (hit.collider.gameObject.tag == "Endpoint")))
+                {
+                    transform.position = transform.position + transform.forward;
+                }
+            }
         }
     }
 }
