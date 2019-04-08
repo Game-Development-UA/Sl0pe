@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+    public GameObject spawnPointPrefab;
     private Vector2[] corners = new Vector2[4];
 
     public void InstantiatePlayer(Maze currentMaze)
@@ -43,6 +44,8 @@ public class PlayerController : MonoBehaviour {
                     break;
                 }
             }
+            GameObject spawnPoint = Instantiate(spawnPointPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.5f), transform.rotation);
+            spawnPoint.transform.parent = transform;
         }
     }
 
