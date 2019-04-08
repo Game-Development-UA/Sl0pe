@@ -38,8 +38,8 @@ public class MazeManager : MonoBehaviour {
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
 
         // Increase size of maze with level progression
-        mazePrefab.size.x = 5 + currentLevel * 5;
-        mazePrefab.size.z = 5 + currentLevel * 5;
+        mazePrefab.size.x = 4 + currentLevel * 6;
+        mazePrefab.size.z = 4 + currentLevel * 6;
 
         // Instantiate maze and player
         currentMaze = Instantiate(mazePrefab) as Maze;
