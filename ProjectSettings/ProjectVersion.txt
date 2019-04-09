@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+m_EditorVersion: 2018.3.8f1
+=======
+<<<<<<< HEAD
 m_EditorVersion: 2018.3.6f1
 =======
 m_EditorVersion: 2018.2.1f1
 >>>>>>> Thomas's_Development
+>>>>>>> Andy's_Development

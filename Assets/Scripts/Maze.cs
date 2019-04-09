@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Maze : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class Maze : MonoBehaviour {
     public IntVector2 size;
     public Passage passagePrefab;
     public Wall wallPrefab;
+    public GameObject zombiePrefab;
 
     private Cell[,] cells;
     private Endpoint endpoint;
@@ -37,6 +39,7 @@ public class Maze : MonoBehaviour {
         endpointCorner = Random.Range(0, 4);
 
         endpoint = Instantiate(endpointPrefab, new Vector3(corners[endpointCorner].x, 3f, corners[endpointCorner].y), Quaternion.identity);
+        AddZombies();
     }
 
     private void DoFirstGenerationStep(List<Cell> activeCells)
@@ -134,5 +137,38 @@ public class Maze : MonoBehaviour {
     public Endpoint GetEndpoint()
     {
         return endpoint;
+    }
+
+    // Custom Method
+    public void AddZombies()
+    {
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+
+        for (int i = 0; i < currentLevel * 5; ++i)
+        {
+            float xPosition = Random.Range(-size.x / 2, size.x / 2);
+            float zPosition = Random.Range(-size.z / 2, size.z / 2);
+
+            if (xPosition < 1)
+            {
+                xPosition += 0.5f;
+            }
+            else
+            {
+                xPosition -= 0.5f;
+            }
+
+            if (zPosition < 1)
+            {
+                zPosition += 0.5f;
+            }
+            else
+            {
+                zPosition -= 0.5f;
+                    
+            }
+
+            Instantiate(zombiePrefab, new Vector3(xPosition, 0.75f, zPosition), Quaternion.identity);
+        }
     }
 }
