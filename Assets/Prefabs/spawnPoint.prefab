@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1371539423713984
+--- !u!1 &5288780951900151230
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4968089092057890}
-  - component: {fileID: 114400798505431056}
+  - component: {fileID: 3854820929229958071}
+  - component: {fileID: 4321273738038943897}
   m_Layer: 0
-  m_Name: Maze
+  m_Name: spawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4968089092057890
+--- !u!4 &3854820929229958071
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1371539423713984}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 5288780951900151230}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 4.5, y: 0.5, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114400798505431056
+--- !u!114 &4321273738038943897
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1371539423713984}
+  m_GameObject: {fileID: 5288780951900151230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c99a9c3bdb81ed4394dc907173192c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a8b9c9b9e967204d9c66233192d704e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellPrefab: {fileID: 114772478004062300, guid: c581c24e6c0692645bf0b455d39ef823,
+  projectile: {fileID: 7496899184331935579, guid: a3f48c046aac197428b8a59ff627a2b5,
     type: 3}
-  size:
-    x: 10
-    z: 10
-  passagePrefab: {fileID: 114953779318669084, guid: 63d9486fe85330c4089a2b492c24a49f,
-    type: 3}
-  wallPrefab: {fileID: 114707218902948758, guid: d139a7ccbcce8e74cb0038fbf4689bcf,
-    type: 3}
-  zombiePrefab: {fileID: 6602868974644482456, guid: 281c41cffe542c4428d96e0583b26f72,
-    type: 3}
+  speed: 20
