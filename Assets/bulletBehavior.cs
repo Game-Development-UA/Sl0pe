@@ -6,7 +6,7 @@ public class bulletBehavior : MonoBehaviour
 {
     void OnCollisionEnter(Collision collision)
     {
-        if ((collision.gameObject.tag == "Wall") || (collision.gameObject.tag == "Floor"))
+        if (((collision.gameObject.tag == "Wall") || (collision.gameObject.tag == "Floor")) || (collision.gameObject.tag == "Zombie"))
         {
             Destroy(gameObject);
         }

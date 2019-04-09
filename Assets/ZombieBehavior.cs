@@ -35,4 +35,12 @@ public class ZombieBehavior : MonoBehaviour
             }
         }
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
