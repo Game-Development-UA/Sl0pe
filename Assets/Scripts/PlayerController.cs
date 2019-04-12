@@ -8,9 +8,12 @@ public class PlayerController : MonoBehaviour {
 
     private Vector2[] corners = new Vector2[4];
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
-        SceneManager.LoadScene(6);
+        if (collision.gameObject.name.Contains("Zombie"))
+        {
+            SceneManager.LoadScene(6);
+        }
     }
 
     public void InstantiatePlayer(Maze currentMaze)
