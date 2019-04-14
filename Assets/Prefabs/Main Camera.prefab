@@ -13,8 +13,13 @@ GameObject:
   - component: {fileID: 6177133325458884887}
   - component: {fileID: 6153640966667832989}
   - component: {fileID: 6128417799676145305}
+<<<<<<< HEAD
+  - component: {fileID: 7397860235532862395}
+  - component: {fileID: 5283670366838928663}
+=======
   - component: {fileID: 5569224284565033012}
   - component: {fileID: 972628844905578236}
+>>>>>>> AndyThomFixBranch
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -117,7 +122,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 065ed07ee09da34439b66c11c2489eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+--- !u!136 &7397860235532862395
+=======
 --- !u!136 &5569224284565033012
+>>>>>>> AndyThomFixBranch
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,7 +140,11 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+--- !u!54 &5283670366838928663
+=======
 --- !u!54 &972628844905578236
+>>>>>>> AndyThomFixBranch
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
