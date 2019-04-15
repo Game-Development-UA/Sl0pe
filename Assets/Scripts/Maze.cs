@@ -168,7 +168,7 @@ public class Maze : MonoBehaviour {
                     
             }
 
-            Instantiate(zombiePrefab, new Vector3(xPosition, 0.75f, zPosition), Quaternion.identity);
+            Instantiate(zombiePrefab, new Vector3(xPosition, 0f, zPosition), Quaternion.identity);
         }
     }
 }

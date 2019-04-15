@@ -52,5 +52,5 @@ MonoBehaviour:
     type: 3}
   wallPrefab: {fileID: 114707218902948758, guid: d139a7ccbcce8e74cb0038fbf4689bcf,
     type: 3}
-  zombiePrefab: {fileID: 6602868974644482456, guid: 281c41cffe542c4428d96e0583b26f72,
+  zombiePrefab: {fileID: 1300611964618398, guid: 0584839bceadb844fa31b1ca352056ba,
     type: 3}
