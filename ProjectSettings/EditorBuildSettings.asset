@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOverScreen.unity
     guid: dbbea9959b0f82a46b12fdccb6b6933a
+  - enabled: 1
+    path: Assets/Scenes/Endless.unity
+    guid: fc235004979b73943aac5bd747bc1443
   m_configObjects: {}

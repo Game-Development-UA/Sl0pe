@@ -14,14 +14,15 @@ public class Maze : MonoBehaviour {
     private Cell[,] cells;
     private Endpoint endpoint;
     private Vector2[] corners = new Vector2[4];
-    private int endpointCorner; 
+    private int endpointCorner;
+    private int endlessLevel = 0;
 
     public Cell GetCell(IntVector2 coordinates)
     {
         return cells[coordinates.x, coordinates.z];
     }
 
-    public void Create(Endpoint endpointPrefab)
+    public void Create(Endpoint endpointPrefab, bool endless)
     {
         cells = new Cell[size.x, size.z];
         List<Cell> activeCells = new List<Cell>();
@@ -39,7 +40,15 @@ public class Maze : MonoBehaviour {
         endpointCorner = Random.Range(0, 4);
 
         endpoint = Instantiate(endpointPrefab, new Vector3(corners[endpointCorner].x, 3f, corners[endpointCorner].y), Quaternion.identity);
-        AddZombies();
+
+        if (!endless)
+        {
+            AddZombies();
+        }
+        else
+        {
+            AddEndlessZombies();
+        }
     }
 
     private void DoFirstGenerationStep(List<Cell> activeCells)
@@ -166,6 +175,38 @@ public class Maze : MonoBehaviour {
             {
                 zPosition -= 0.5f;
                     
+            }
+
+            Instantiate(zombiePrefab, new Vector3(xPosition, 0f, zPosition), Quaternion.identity);
+        }
+    }
+
+    // Custom Method
+    public void AddEndlessZombies()
+    {
+        endlessLevel++;
+
+        for (int i = 0; i < endlessLevel * 5; ++i)
+        {
+            float xPosition = Random.Range(-size.x / 2, size.x / 2);
+            float zPosition = Random.Range(-size.z / 2, size.z / 2);
+
+            if (xPosition < 1)
+            {
+                xPosition += 0.5f;
+            }
+            else
+            {
+                xPosition -= 0.5f;
+            }
+
+            if (zPosition < 1)
+            {
+                zPosition += 0.5f;
+            }
+            else
+            {
+                zPosition -= 0.5f;
             }
 
             Instantiate(zombiePrefab, new Vector3(xPosition, 0f, zPosition), Quaternion.identity);
