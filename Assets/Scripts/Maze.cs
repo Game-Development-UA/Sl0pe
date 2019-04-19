@@ -212,4 +212,10 @@ public class Maze : MonoBehaviour {
             Instantiate(zombiePrefab, new Vector3(xPosition, 0f, zPosition), Quaternion.identity);
         }
     }
+
+    // Custom Method
+    public void DestroyEndpoint()
+    {
+        Destroy(endpoint.gameObject);
+    }
 }

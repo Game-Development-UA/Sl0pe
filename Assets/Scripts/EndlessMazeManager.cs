@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndlessMazeManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class EndlessMazeManager : MonoBehaviour
     private Maze currentMaze;
     private PlayerController currentPlayer;
     private int currentLevel = 0;
+    private float time = 300;
 
     void Start()
     {
@@ -18,10 +20,18 @@ public class EndlessMazeManager : MonoBehaviour
 
     void Update()
     {
+        time -= Time.deltaTime;
+        
+        if (time < 0f)
+        {
+            SceneManager.LoadScene(6);
+        }
+
         if (currentMaze.GetEndpoint().GetComplete())
         {
-            Destroy(currentMaze);
-            Destroy(currentPlayer);
+            currentMaze.DestroyEndpoint();
+            Destroy(currentMaze.gameObject);
+            Destroy(currentPlayer.gameObject);
             StartGame();
         }
     }
