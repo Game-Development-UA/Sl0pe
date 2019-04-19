@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ZombieBehavior : MonoBehaviour
 {
-    private float speed = .04f;
+    private float speed = .01f;
 
     void Update()
     {

@@ -7,12 +7,20 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour {
 
     private Vector2[] corners = new Vector2[4];
+    private int health = 3;
 
     void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.name.Contains("Zombie"))
         {
-            SceneManager.LoadScene(6);
+            if (health == 1)
+            {
+                SceneManager.LoadScene(6);
+            }
+            else
+            {
+                health--;
+            }
         }
     }
 

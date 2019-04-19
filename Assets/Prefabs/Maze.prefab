@@ -54,3 +54,4 @@ MonoBehaviour:
     type: 3}
   zombiePrefab: {fileID: 1300611964618398, guid: 0584839bceadb844fa31b1ca352056ba,
     type: 3}
+  player: {fileID: 6096829237018854063, guid: 13002109f68064841a5e3e09964585b1, type: 3}
