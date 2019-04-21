@@ -19,12 +19,6 @@ public class MazeManager : MonoBehaviour {
 	}
 
 	void Update () {
-        
-        // Allow user to restart game by pressing ESC
-		if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Restart();
-        }
 
         // Go to next level if user completes current level
         if (currentMaze.GetEndpoint().GetComplete())
