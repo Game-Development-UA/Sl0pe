@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ZombieBehavior : MonoBehaviour
 {
+    public Animator Zombieanimator;
+
     private float speed = .01f;
 
     void Update()
@@ -40,7 +42,11 @@ public class ZombieBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
         {
-            Destroy(gameObject);
+            Zombieanimator.SetTrigger("Death");
         }
+    }
+
+    public void Died() {
+        Destroy(gameObject);
     }
 }
