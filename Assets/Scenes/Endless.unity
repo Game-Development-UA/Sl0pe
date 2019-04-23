@@ -462,11 +462,61 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6304098606269015989, guid: cdb782d8aaa83464792cd0cc7724210c,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304098606269015989, guid: cdb782d8aaa83464792cd0cc7724210c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 160
+      objectReference: {fileID: 0}
     - target: {fileID: 6304098606269015946, guid: cdb782d8aaa83464792cd0cc7724210c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 144479355}
+    - target: {fileID: 6304098606468824267, guid: cdb782d8aaa83464792cd0cc7724210c,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304098606468824267, guid: cdb782d8aaa83464792cd0cc7724210c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304098606468824264, guid: cdb782d8aaa83464792cd0cc7724210c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304098606468824264, guid: cdb782d8aaa83464792cd0cc7724210c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304098606468824264, guid: cdb782d8aaa83464792cd0cc7724210c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304098606468824264, guid: cdb782d8aaa83464792cd0cc7724210c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304098605804923604, guid: cdb782d8aaa83464792cd0cc7724210c,
+        type: 3}
+      propertyPath: m_Text
+      value: SAVE AND QUIT
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304098606551363721, guid: cdb782d8aaa83464792cd0cc7724210c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 160
+      objectReference: {fileID: 0}
     - target: {fileID: 6304098606551363726, guid: cdb782d8aaa83464792cd0cc7724210c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

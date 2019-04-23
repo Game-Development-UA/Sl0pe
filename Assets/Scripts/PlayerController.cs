@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour {
 
     private Vector2[] corners = new Vector2[4];
-    private int health = 3;
+    public int health = 3;
+    public int points = 0;
+    public int zombiesKilled = 0;
 
     void OnTriggerEnter(Collider collision)
     {
@@ -86,5 +88,26 @@ public class PlayerController : MonoBehaviour {
                 }
             }
         }
+    }
+
+    public void IncrementPoints()
+    {
+        points += 10;
+        zombiesKilled += 1;
+    }
+
+    public int GetPoints()
+    {
+        return points;
+    }
+
+    public int GetZombiesKilled()
+    {
+        return zombiesKilled;
+    }
+
+    public int GetHealth()
+    {
+        return health;
     }
 }

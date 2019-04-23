@@ -7,10 +7,12 @@ public class MazeManager : MonoBehaviour {
 
     public Maze mazePrefab;
     public PlayerController player;
+    public SaveScript save;
 
     // Custom Prefab
     public Endpoint endpointPrefab;
 
+    [SerializeField]
     private Maze currentMaze;
     private PlayerController currentPlayer;
 
@@ -23,6 +25,7 @@ public class MazeManager : MonoBehaviour {
         // Go to next level if user completes current level
         if (currentMaze.GetEndpoint().GetComplete())
         {
+            save.SaveData();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
@@ -30,6 +33,11 @@ public class MazeManager : MonoBehaviour {
     private void StartGame()
     {
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
+
+        if (currentLevel >= 2)
+        {
+            save.LoadData();
+        }
 
         // Increase size of maze with level progression
         mazePrefab.size.x = 4 + currentLevel * 6;

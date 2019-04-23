@@ -5,6 +5,7 @@ using UnityEngine;
 public class ZombieBehavior : MonoBehaviour
 {
     private float speed = .01f;
+    public PlayerController playerController;
 
     void Update()
     {
@@ -41,6 +42,7 @@ public class ZombieBehavior : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             Destroy(gameObject);
+            playerController.IncrementPoints();
         }
     }
 }

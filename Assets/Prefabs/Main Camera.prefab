@@ -137,7 +137,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2316138810039524594}
   - component: {fileID: 4228333608759995510}
-  - component: {fileID: 3549921086166172157}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -201,14 +200,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &3549921086166172157
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 957906623510552905}
-  m_Enabled: 1
 --- !u!1 &4936031058357183956
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,6 +448,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 065ed07ee09da34439b66c11c2489eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 3
+  points: 0
+  zombiesKilled: 0
 --- !u!136 &5569224284565033012
 CapsuleCollider:
   m_ObjectHideFlags: 0
