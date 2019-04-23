@@ -856,6 +856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2868494679164f640a0151b583903b3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Zombieanimator: {fileID: 95053064929079256}
 --- !u!1 &1342411359040796
 GameObject:
   m_ObjectHideFlags: 0
