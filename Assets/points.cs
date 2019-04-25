@@ -1,24 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class zombiesKilled : MonoBehaviour
+
+public class points : MonoBehaviour
 {
-    public int points = 0;
+    public float num_points = 0;
     public Text pointsText;
 
-    public int zombiesKilled = 0;
+    public float zKilled = 0;
     public Text killsText;
 
     public void IncrementPoints()
     {
-        points += 10;
-        zombiesKilled += 1;
+        num_points += 10;
+        zKilled += 1;
     }
 
     void Update()
     {
-        killsText.text = zombiesKilled.ToString("KILLS : 00");
-        pointsText.text = points.ToString("POINTS : 00");
+        killsText.text = zKilled.ToString("KILLS : 00");
+        pointsText.text = num_points.ToString("POINTS : 00");
     }
 }

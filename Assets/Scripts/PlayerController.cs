@@ -77,8 +77,6 @@ public class PlayerController : MonoBehaviour {
     void Update()
     {
         healthBar.value = health;
-        killsText.text = zombiesKilled.ToString("KILLS : 00");
-        pointsText.text = points.ToString("POINTS : 00");
 
         if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
