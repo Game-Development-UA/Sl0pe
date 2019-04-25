@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour {
     void Update()
     {
         healthBar.value = health;
+
         if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
             transform.Rotate(0f, 90f, 0f);

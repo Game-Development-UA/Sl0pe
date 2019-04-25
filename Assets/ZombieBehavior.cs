@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class ZombieBehavior : MonoBehaviour
 {
     public Animator Zombieanimator;
@@ -44,8 +45,10 @@ public class ZombieBehavior : MonoBehaviour
         {
             Zombieanimator.SetTrigger("Death");
         }
-    }
 
+
+    }
+    
     public void Died() {
         Destroy(gameObject);
     }
