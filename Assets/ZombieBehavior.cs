@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class ZombieBehavior : MonoBehaviour
 {
     public Animator Zombieanimator;
@@ -47,7 +48,7 @@ public class ZombieBehavior : MonoBehaviour
             playerController.IncrementPoints();
         }
     }
-
+    
     public void Died() {
         Destroy(gameObject);
     }
