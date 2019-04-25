@@ -841,7 +841,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6096829237018854063}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2600a4ba5cb4e545ae7e52ff9ccb2e2, type: 3}
   m_Name: 
@@ -864,9 +864,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   points: 0
-  pointsText: {fileID: 0}
+  pointsText: {fileID: 1754870103196108892}
   zombiesKilled: 0
-  killsText: {fileID: 0}
+  killsText: {fileID: 3745804039673499061}
   healthBar: {fileID: 6444587603994517439}
 --- !u!136 &5569224284565033012
 CapsuleCollider:

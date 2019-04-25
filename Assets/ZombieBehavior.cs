@@ -45,11 +45,12 @@ public class ZombieBehavior : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             Zombieanimator.SetTrigger("Death");
-            playerController.IncrementPoints();
+           // playerController.IncrementPoints();
         }
     }
     
     public void Died() {
         Destroy(gameObject);
     }
+    
 }

@@ -1,4 +1,4 @@
-﻿ using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,10 +11,10 @@ public class PlayerController : MonoBehaviour {
     private Vector2[] corners = new Vector2[4];
     public int health = 3;
 
-    public int points = 0;
+    public int points;
     public Text pointsText;
 
-    public int zombiesKilled = 0;
+    public int zombiesKilled;
     public Text killsText;
 
     public Slider healthBar;
@@ -74,7 +74,13 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    void Update()
+    private void Start()
+    {
+        points = 0;
+        zombiesKilled = 0;
+    }
+
+  void Update()
     {
         healthBar.value = health;
 
@@ -100,6 +106,7 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+            
     public void IncrementPoints()
     {
         points += 10;
@@ -119,5 +126,5 @@ public class PlayerController : MonoBehaviour {
     public int GetHealth()
     {
         return health;
-    }
+    } 
 }
