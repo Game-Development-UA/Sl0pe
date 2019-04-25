@@ -15,7 +15,7 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        timeText.text = time.ToString("TIME : 00");
+        timeText.text = time.ToString("TIME : 00 ");
         time += Time.deltaTime;
 
         if (time == 30)
