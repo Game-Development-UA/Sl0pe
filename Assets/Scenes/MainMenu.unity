@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -273,9 +273,9 @@ RectTransform:
   m_Father: {fileID: 1489831726}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3, y: 260}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -3, y: -124}
   m_SizeDelta: {x: 351.8, y: 351.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &502738504
@@ -478,9 +478,9 @@ RectTransform:
   m_Father: {fileID: 1777895838}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.0000038, y: -180}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -2.0000038, y: -130}
   m_SizeDelta: {x: 258.1, y: 48.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &712155686
@@ -1236,9 +1236,9 @@ RectTransform:
   m_Father: {fileID: 1777895838}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 313, y: -53}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 313, y: -3}
   m_SizeDelta: {x: 293.8, y: 112.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &953872465
@@ -2224,9 +2224,9 @@ RectTransform:
   m_Father: {fileID: 1777895838}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 341, y: -141}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 341, y: -91}
   m_SizeDelta: {x: 191.3, y: 42.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1694077295
@@ -2382,9 +2382,9 @@ RectTransform:
   m_Father: {fileID: 1777895838}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -328, y: -23}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -328, y: 27}
   m_SizeDelta: {x: 511.3, y: 187.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1711672922
