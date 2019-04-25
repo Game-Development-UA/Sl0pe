@@ -20,7 +20,7 @@ public class points : MonoBehaviour
 
     void Update()
     {
-        killsText.text = zKilled.ToString("KILLS : ");
-        pointsText.text = num_points.ToString("POINTS : ");
+        killsText.text = "KILLS : " + zKilled;
+        pointsText.text = "POINTS : " + num_points;
     }
 }
