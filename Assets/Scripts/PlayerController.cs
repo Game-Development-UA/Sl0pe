@@ -10,8 +10,13 @@ public class PlayerController : MonoBehaviour {
 
     private Vector2[] corners = new Vector2[4];
     public int health = 3;
+
     public int points = 0;
+    public Text pointsText;
+
     public int zombiesKilled = 0;
+    public Text killsText;
+
     public Slider healthBar;
 
     void OnTriggerEnter(Collider collision)
@@ -72,6 +77,8 @@ public class PlayerController : MonoBehaviour {
     void Update()
     {
         healthBar.value = health;
+        killsText.text = zombiesKilled.ToString("KILLS : 00");
+        pointsText.text = points.ToString("POINTS : 00");
 
         if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
