@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 
 public class PlayerController : MonoBehaviour {
 
     private Vector2[] corners = new Vector2[4];
-    private int health = 3;
+    public int health = 3;
+    public Slider healthBar;
 
     void OnTriggerEnter(Collider collision)
     {
@@ -66,6 +69,7 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
+        healthBar.value = health;
         if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
             transform.Rotate(0f, 90f, 0f);
