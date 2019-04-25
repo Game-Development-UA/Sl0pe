@@ -18,10 +18,12 @@ public class Timer : MonoBehaviour
         timeText.text = time.ToString("TIME : 00 ");
         time += Time.deltaTime;
 
+        /*
         if (time == 30)
         {
             SceneManager.LoadScene(6);
         }
+        */
     }
 
     public float GetTime()
