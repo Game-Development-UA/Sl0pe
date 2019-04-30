@@ -12,6 +12,7 @@ public class EndlessMazeManager : MonoBehaviour
     private PlayerController currentPlayer;
     private int currentLevel = 0;
     private float time = 300;
+    public SaveScript save;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class EndlessMazeManager : MonoBehaviour
 
     void Update()
     {
+        save.SaveData();
         time -= Time.deltaTime;
         
         if (time < 0f)
@@ -38,6 +40,11 @@ public class EndlessMazeManager : MonoBehaviour
 
     private void StartGame()
     {
+
+        if (currentLevel > 0)
+        {
+            save.LoadData();
+        }
         currentLevel++;
 
         // Increase size of maze with level progression
