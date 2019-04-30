@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MazeManager : MonoBehaviour {
 
     public Maze mazePrefab;
     public PlayerController player;
     public SaveScript save;
+    public Text countdownTimer;
 
     // Custom Prefab
     public Endpoint endpointPrefab;
@@ -32,6 +34,8 @@ public class MazeManager : MonoBehaviour {
 
     private void StartGame()
     {
+        StartCoroutine(gameCountdown());
+
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
 
         if (currentLevel >= 2)
@@ -48,6 +52,20 @@ public class MazeManager : MonoBehaviour {
         currentMaze.Create(endpointPrefab, false);
         currentPlayer = Instantiate(player) as PlayerController;
         currentPlayer.InstantiatePlayer(currentMaze);
+    }
+
+    private IEnumerator gameCountdown()
+    {
+        float seconds = 3f;
+        float normalizedTime = 0;
+
+        while (normalizedTime <= 1f)
+        {
+            countdownTimer.text = "" + normalizedTime;
+            normalizedTime += Time.deltaTime / seconds;
+            yield return null;
+        }
+
     }
 
     private void Restart()
