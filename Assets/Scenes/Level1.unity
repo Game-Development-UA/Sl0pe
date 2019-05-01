@@ -270,7 +270,6 @@ MonoBehaviour:
     type: 3}
   player: {fileID: 6128417799676145305, guid: 13002109f68064841a5e3e09964585b1, type: 3}
   save: {fileID: 698472746}
-  countdownTimer: {fileID: 898684770}
   endpointPrefab: {fileID: 114924616711613490, guid: 7a30383f840ddc143bc4baa6a3f37646,
     type: 3}
   currentMaze: {fileID: 0}
@@ -636,7 +635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -672,6 +671,7 @@ GameObject:
   - component: {fileID: 1479296040}
   - component: {fileID: 1479296039}
   - component: {fileID: 1479296038}
+  - component: {fileID: 1479296042}
   m_Layer: 5
   m_Name: Countdown
   m_TagString: Untagged
@@ -760,6 +760,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1479296042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479296037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9550c20fc6dd4149a69971afe611926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdownTimer: {fileID: 898684770}
 --- !u!1 &2079239849
 GameObject:
   m_ObjectHideFlags: 0
