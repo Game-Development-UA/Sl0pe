@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CoroutineTimer : MonoBehaviour
 {
     public Text countdownTimer;
+    float seconds = 3f;
 
     void Start()
     {
@@ -14,14 +15,12 @@ public class CoroutineTimer : MonoBehaviour
 
     private IEnumerator gameCountdown()
     {
-        float seconds = 3f;
-        float normalizedTime = 0;
 
-        while (normalizedTime <= 1f)
+        while (seconds > 0)
         {
-            countdownTimer.text = "" + normalizedTime;
-            normalizedTime += Time.deltaTime / seconds;
-            yield return null;
+            countdownTimer.text = seconds.ToString();
+            yield return new WaitForSeconds(1.0f);
+            seconds--;
         }
     }
 }
