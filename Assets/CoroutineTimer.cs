@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CoroutineTimer : MonoBehaviour
 {
     public Text countdownTimer;
+    public Canvas canvas;
     float seconds = 3f;
 
     void Start()
@@ -22,5 +23,7 @@ public class CoroutineTimer : MonoBehaviour
             yield return new WaitForSeconds(1.0f);
             seconds--;
         }
+
+        canvas.gameObject.SetActive(false);
     }
 }
