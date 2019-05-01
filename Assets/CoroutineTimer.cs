@@ -11,6 +11,7 @@ public class CoroutineTimer : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 0;
         StartCoroutine(gameCountdown());
     }
 
@@ -25,5 +26,6 @@ public class CoroutineTimer : MonoBehaviour
         }
 
         canvas.gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
 }
